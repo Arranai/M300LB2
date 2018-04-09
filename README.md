@@ -22,3 +22,4 @@ Beispielsweise so:
     7a05db83a2f4        redmine             "/docker-entrypoint.…"   5 seconds ago               Up 5 seconds        0.0.0.0:32768-  >3000/tcp   some-redmine
     10ca4f7e32cb        mysql               "docker-entrypoint.s…"   11 minutes ago              Up 11 minutes       3306/tcp                  some-mysql
     e10658c50543        postgres            "docker-entrypoint.s…"   11 minutes ago              Up 11 minutes       5432/tcp                  some-postgres`
+Mit der Adresse http://192.168.60.101:32768/ kommt man in meinem Beispiel auf den Redmine drauf.
