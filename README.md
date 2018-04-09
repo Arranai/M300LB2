@@ -15,8 +15,8 @@ Wenn am Schluss diese beiden Container aufgesetzt sind kann man mit dem Command 
 
 Beispielsweise so:
 
-CONTAINER ID        IMAGE               COMMAND                  CREATED                     STATUS              PORTS            
+`CONTAINER ID        IMAGE               COMMAND                  CREATED                     STATUS              PORTS            
  NAMES
 7a05db83a2f4        redmine             "/docker-entrypoint.…"   5 seconds ago               Up 5 seconds        0.0.0.0:32768->3000/tcp   some-redmine
 10ca4f7e32cb        mysql               "docker-entrypoint.s…"   11 minutes ago              Up 11 minutes       3306/tcp                  some-mysql
-e10658c50543        postgres            "docker-entrypoint.s…"   11 minutes ago              Up 11 minutes       5432/tcp                  some-postgres
+e10658c50543        postgres            "docker-entrypoint.s…"   11 minutes ago              Up 11 minutes       5432/tcp                  some-postgres`
