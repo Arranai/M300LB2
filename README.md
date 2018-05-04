@@ -13,7 +13,7 @@ Als Frontend habe ich redmine installiert, was ein Projektmanagements Tool ist. 
 `docker run -d -P --name some-redmine --link some-postgres:postgres redmine`
 
 ## Kontrolle
-Wenn am Schluss diese beiden Container aufgesetzt sind kann man mit dem Command `docker ps` anzeigen lassen, welche aktiv sind und über welchen Port sie gemappt sind.
+Wenn am Schluss diese beiden Container aufgesetzt sind kann man mit dem Command `docker ps` anzeigen lassen, welche Dockerprozesse aktiv sind und über welchen Port sie gemappt wurden.
 
 Beispielsweise so:
 
