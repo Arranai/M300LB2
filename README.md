@@ -8,7 +8,7 @@ Als Datenbank tool verwende ich in diesem Beispiel PostgreSQL, dies wird ganz ei
 `docker run -d --name some-postgres -e POSTGRES_PASSWORD=secret -e POSTGRES_USER=redmine postgres`
 
 ## Frontend
-Als Frontend habe ich redmine installiert, was ein Projektmanagements Tool ist. Wichtig ist, dass man mit dem `-P` noch extra einen Port mappen kann, damit man auch lokal von der Maschine drauf kann. Ebenfalls wird direkt die Postgres DB verlinkt mit dem Redmine d.h. auf dies muss man nachher gar nicht mehr achten, da es schon verlinkt ist.
+Als Frontend habe ich redmine installiert, was ein Projektmanagements Tool ist. Wichtig ist, dass man mit dem `-P` noch extra einen Port mappen kann, damit man auch lokal von der Maschine zugreifen kann. Ebenfalls wird direkt die Postgres DB verlinkt mit dem Redmine d.h. auf dies muss man nachher gar nicht mehr achten, da es schon verlinkt ist.
  
 `docker run -d -P --name some-redmine --link some-postgres:postgres redmine`
 
