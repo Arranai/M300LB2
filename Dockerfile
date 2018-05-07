@@ -3,7 +3,7 @@ MAINTAINER Alexander Hauser <alexander.ha18@gmail.com>
 
 RUN apt-get -qq update
 RUN apt-get -y install apache2
-RUN apt-get -y install php
+RUN apt-get -y install php libapache2-mod-php
 
 ENV APACHE_RUN_USER www-data
 ENV APACHE_RUN_GROUP www-data
