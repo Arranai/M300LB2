@@ -54,3 +54,9 @@ VOLUME /var/www/html
 
 CMD /bin/bash -c "source /etc/apache2/envvars && exec /usr/sbin/apache2 -DFOREGROUND"
 ```
+
+## Aufsetzen
+Um nachher mit diesem File aufsetzen zu können muss man zuerst den Docker aufbauen. Mit dem `.` wird vorgegeben, dass das Dockerfile verwendet werden soll.
+`docker build -t apache .`
+Zunächst wird der Port gemapt und das Laufwerk m300lb2 wird auf das /var Verzeichnis gemountet.
+`docker run -d -p 1100:80 -v /home/vagrant/m300lb2:/var/www/html --name apache apache`
