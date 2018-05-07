@@ -23,3 +23,34 @@ Beispielsweise so:
     10ca4f7e32cb        mysql               "docker-entrypoint.s…"   11 minutes ago              Up 11 minutes       3306/tcp                  some-mysql
     e10658c50543        postgres            "docker-entrypoint.s…"   11 minutes ago              Up 11 minutes       5432/tcp                  some-postgres`
 Mit der Adresse http://192.168.60.101:32768/ kommt man in meinem Beispiel auf den Redmine drauf.
+
+
+# Dockerfile
+Als erstes definiert man in einem Dockerfile welches Betriebssystem verwendet wird und wer der Maintainer ist.
+```
+FROM ubuntu:16.04
+MAINTAINER Alexander Hauser <alexander.ha18@gmail.com>
+```
+
+Als nächstes installiert es apache und php. PHP wird direkt mit der Apache Lib verbindet.
+```
+RUN apt-get -qq update
+RUN apt-get -y install apache2
+RUN apt-get -y install php libapache2-mod-php
+
+ENV APACHE_RUN_USER www-data
+ENV APACHE_RUN_GROUP www-data
+ENV APACHE_LOG_DIR /var/log/apache2
+```
+
+Dann werden zwei Directories erstellt, falls noch nicht vorhanden.
+`RUN mkdir -p /var/lock/apache2 /var/run/apache2`
+
+Zuletzt wird der Port 80 freigegeben und der Ordner wird gemountet.
+```
+EXPOSE 80
+
+VOLUME /var/www/html
+
+CMD /bin/bash -c "source /etc/apache2/envvars && exec /usr/sbin/apache2 -DFOREGROUND"
+```
